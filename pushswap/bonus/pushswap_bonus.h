@@ -6,7 +6,7 @@
 /*   By: rammisse <rammisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:01:29 by rammisse          #+#    #+#             */
-/*   Updated: 2025/02/03 17:34:58 by rammisse         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:49:34 by rammisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 int		main(int ac, char **av);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-long	ft_atoi(char *str, t_stack **a);
+long	ft_atoi(char *str);
 char	**ft_split(char const *s, char c);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_lstsize(t_stack *lst);

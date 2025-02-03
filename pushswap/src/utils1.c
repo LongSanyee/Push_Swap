@@ -6,7 +6,7 @@
 /*   By: rammisse <rammisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:14:01 by rammisse          #+#    #+#             */
-/*   Updated: 2025/02/03 18:09:05 by rammisse         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:36:50 by rammisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-long	ft_atoi(char *str, t_stack **a)
+long	ft_atoi(char *str)
 {
 	long		result;
 	int			sign;
@@ -38,12 +38,6 @@ long	ft_atoi(char *str, t_stack **a)
 	while (ft_isdigit(str[i]))
 	{
 		result = result * 10 + ((str[i++] - '0'));
-		if (result * sign > INT_MAX || result * sign < INT_MIN)
-		{
-			freealll(a);
-			free(str);
-			erro();
-		}
 	}
 	return (result * sign);
 }

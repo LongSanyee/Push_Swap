@@ -6,7 +6,7 @@
 /*   By: rammisse <rammisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:15:25 by rammisse          #+#    #+#             */
-/*   Updated: 2025/02/03 14:02:18 by rammisse         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:50:38 by rammisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,6 @@ int	is_valid_number(char *token)
 		i++;
 	}
 	return (1);
-}
-
-void	free_split(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
 }
 
 int	isvalid(char **av)
@@ -74,6 +64,16 @@ void	check(char **av)
 		erro();
 }
 
+void	checkoverflow(t_stack **stack, char **temp, long value)
+{
+	if (value > INT_MAX || value < INT_MIN)
+	{
+		free_split(temp);
+		freealll(stack);
+		erro();
+	}
+}
+
 void	parseargs(t_stack **stack, int ac, char **av)
 {
 	int		i;
@@ -92,13 +92,13 @@ void	parseargs(t_stack **stack, int ac, char **av)
 		j = 0;
 		while (temp[j])
 		{
-			value = ft_atoi(temp[j], stack);
+			value = ft_atoi(temp[j++]);
+			checkoverflow(stack, temp, value);
 			node = ft_lstnew(value);
 			if (!node)
 				return ;
 			ft_lstadd_back(stack, node);
-			free(temp[j++]);
 		}
-		free(temp);
+		free_split(temp);
 	}
 }
