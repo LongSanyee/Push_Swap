@@ -6,11 +6,11 @@
 /*   By: rammisse <rammisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:15:25 by rammisse          #+#    #+#             */
-/*   Updated: 2025/02/03 13:11:25 by rammisse         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:02:18 by rammisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pushswap.h"
+#include "pushswap_bonus.h"
 
 int	is_valid_number(char *token)
 {

@@ -6,11 +6,11 @@
 /*   By: rammisse <rammisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:14:01 by rammisse          #+#    #+#             */
-/*   Updated: 2025/02/03 18:09:05 by rammisse         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:46:40 by rammisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pushswap.h"
+#include "pushswap_bonus.h"
 
 int	ft_isdigit(int c)
 {
@@ -48,17 +48,17 @@ long	ft_atoi(char *str, t_stack **a)
 	return (result * sign);
 }
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

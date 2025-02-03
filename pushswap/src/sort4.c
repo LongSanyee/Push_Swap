@@ -6,7 +6,7 @@
 /*   By: rammisse <rammisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 00:15:00 by rammisse          #+#    #+#             */
-/*   Updated: 2025/02/02 12:48:06 by rammisse         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:33:27 by rammisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,32 +74,13 @@ void	pushtob(t_stack **a, t_stack **b)
 void	pushtoa(t_stack **a, t_stack **b)
 {
 	int	pos;
-	int	i;
 	int	size;
 
 	while (*b)
 	{
 		pos = findmax(*b);
 		size = ft_lstsize(*b);
-		if (pos <= size / 2)
-		{
-			i = 0;
-			while (i < pos)
-			{
-				rb(b);
-				i++;
-			}
-		}
-		else
-		{
-			i = 0;
-			while (i < size - pos)
-			{
-				rrb(b);
-				i++;
-			}
-		}
-		pa(a, b);
+		everythinghelp(pos, size, b, a);
 	}
 }
 
